@@ -1,6 +1,8 @@
-import { Component, OnInit } from '@angular/core';
-import {Album} from '../album';
+import { Album } from '../album';
 import { ProductService } from '../product.service';
+
+import { Component, OnInit } from '@angular/core';
+
 
 @Component({
   selector: 'app-product-tracklisting',
@@ -8,10 +10,11 @@ import { ProductService } from '../product.service';
   styleUrls: ['./product-tracklisting.component.css']
 })
 export class ProductTracklistingComponent implements OnInit {
-
   albumInfo: Album;
 
-  constructor(private _productService: ProductService) { }
+  constructor(private _productService: ProductService) {
+
+  }
 
   ngOnInit() {
     this._productService.getAlbum(1).subscribe(response => this.albumInfo = response);
